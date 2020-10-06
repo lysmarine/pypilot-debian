@@ -1,0 +1,4 @@
+pypilot-*.*.*-*/*
+!pypilot-*.*.*-*/debian
+pypilot-*.*.*-*/debian/*.ex
+pypilot-*.*.*-*/debian/.*
