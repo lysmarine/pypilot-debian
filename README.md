@@ -1,6 +1,6 @@
 # pypilot-debian
 Scripts for making pypilot a debian package.
-The selected packaging tool is **dh_make** and the packaging approach is **debianization of upstream project**
+The selected packaging tool is **dh_make** and the packaging approach is **native debian package**
 
 ### Build prerequisites 
 ```
@@ -13,23 +13,25 @@ dh-make dh-python python3-all wget unzip git
 Before building the package we must get the genuine pypilot source code (aka upstream) and compress it with debian naming scheme
 
 ```
-cd pypilot-0.0.0-0/
-
+# Download pypilot 
 wget https://github.com/pypilot/pypilot/archive/master.zip
 unzip master.zip
+rm master.zip
 
-cd pypilot-master/ 
-    git clone --depth 1 https://github.com/pypilot/pypilot_data
-cd ../
+# Download pypilot_data
+wget https://github.com/pypilot/pypilot_data/archive/master.zip
+unzip master.zip
+rm master.zip
 
-mv pypilot-master ../pypilot-0.0.0-0.orig
-cp -r ../pypilot-0.0.0-0.orig/* ./
+# Create the source package 
+cp -r pypilot-master/* ./pypilot
+cp -r pypilot_data-master/* ./pypilot
 
-rm -rf master.zip pypilot-0.0.0-0.orig
 ```
 
 ###### Build and sign source package
 ```
+cd pypilot
 debuild -S
 #dpkg-buildpackage -rfakeroot -b -uc -us # ** Optionally build locale package **
 ```

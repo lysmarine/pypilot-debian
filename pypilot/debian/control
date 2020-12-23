@@ -1,0 +1,21 @@
+Source: pypilot-0.0.0
+Section: misc
+Priority: optional
+Maintainer: Sean Depagnier <seandepagnier@gmail.com>
+Uploaders: Frederic Guilbault <2@0464.ca>
+Build-Depends: debhelper-compat (= 12), dh-python, python3-setuptools, python3-all, python3-dev,
+ python3-serial, libpython3-dev, python3-numpy, python3-scipy, swig, python3-ujson,
+ python3-pyudev, python3-pil, python3-flask, python3-opengl, python3-pip,
+ python3-setuptools, python3-wxgtk4.0, libffi-dev, python3-gevent
+Standards-Version: 4.4.1
+Homepage: http://pypilot.org
+
+Package: python3-pypilot-0.0.1
+Architecture: all
+Essential: no
+Depends: ${python3:Depends}, ${misc:Depends}, python3-serial, libpython3-dev, python3-numpy, python3-scipy, swig, python3-ujson,
+ python3-pyudev, python3-pil, python3-flask, python3-opengl, python3-pip, python3-dev,
+ python3-setuptools, python3-wxgtk4.0, libffi-dev, python3-gevent,
+ swig, libatlas-base-dev, freeglut3, libgl1, libglu1-mesa, libgle3, python-wxgtk4.0
+Description: pypilot is an open source marine autopilot.
+ a free autopilot for sailboats written in python supporting signalk

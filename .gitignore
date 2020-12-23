@@ -1,4 +1,8 @@
-pypilot-*.*.*-*/*
-!pypilot-*.*.*-*/debian
-pypilot-*.*.*-*/debian/*.ex
-pypilot-*.*.*-*/debian/.*
+# debian files generating during packaging
+pypilot-*
+!pypilot/debian
+pypilot/debian/*.ex
+
+# source code download
+pypilot-master
+pypilot_data-master
