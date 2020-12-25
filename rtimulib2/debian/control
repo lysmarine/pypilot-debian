@@ -1,0 +1,22 @@
+Source: rtimulib2-pypilot
+Section: libs
+Priority: optional
+Maintainer: Sean D'Epagnier <info@pypilot.org>
+Uploaders: Frederic Guilbault <2@0464.ca>
+Build-Depends: debhelper (>= 9), dh-python, python3-dev,
+ python3, cmake
+Standards-Version: 4.3.0
+Homepage: http://pypilot.org
+
+Package: python3-rtimulib-pypilot
+Conflicts: python3-rtimulib
+Section: python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}
+Description: Versatile C++ and Python 9-dof, 10-dof and 11-dof IMU library (Python 3)
+ The simplest way to connect a 9-dof, 10-dof or 11-dof IMU to an embedded Linux
+ system and obtain Kalman-filtered quaternion or Euler angle pose data.
+ Basically, two simple function calls (IMUInit() and IMURead()) are pretty much
+ all that's needed to integrate RTIMULib.
+ .
+ This package provides the Python 3 module.

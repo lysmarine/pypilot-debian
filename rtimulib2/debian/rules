@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+DH_VERBOSE = 1
+
+#DPKG_EXPORT_BUILDFLAGS = 1
+#include /usr/share/dpkg/default.mk
+
+extra_flags += \
+	-DBUILD_GL=OFF \
+	-DBUILD_DRIVE=OFF \
+	-DBUILD_DRIVE10=OFF \
+	-DBUILD_DEMO=OFF
+
+# main packaging script based on dh7 syntax
+%:
+	dh $@ -D Linux --with python3 --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(extra_flags)
+
+override_dh_auto_install:
+	cd Linux/python && python3 setup.py install --root=../../debian/python3-rtimulib-pypilot --install-layout=deb

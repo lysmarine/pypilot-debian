@@ -1,3 +1,22 @@
+#rtimulib2
+# Download pypilot
+Download
+```
+wget https://github.com/seandepagnier/RTIMULib2/archive/master.zip
+unzip master.zip
+cp -r RTIMULib2-master/* rtimulib2/
+rm master.zip
+```
+
+Build
+```
+cd rtimulib2
+debuild -S
+#dpkg-buildpackage -rfakeroot -b -uc -us # ** Optionally build locale package **
+`
+
+```
+
 # pypilot-debian
 Scripts for making pypilot a debian package.
 The selected packaging tool is **dh_make** and the packaging approach is **native debian package**
