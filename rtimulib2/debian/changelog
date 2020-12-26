@@ -1,4 +1,10 @@
-rtimulib2-pypilot (0.0.1) buster; urgency=medium
+rtimulib2-pypilot (0.0.9) focal; urgency=medium
+
+  * Add python2 support
+
+ -- Frederic Guilbault <2@0464.ca>  25 Dec 2020 00:00:00 +0000
+
+rtimulib2-pypilot (0.0.3) focal; urgency=medium
 
   * First release
 

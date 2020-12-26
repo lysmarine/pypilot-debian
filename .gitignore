@@ -11,5 +11,7 @@ pypilot/debian/*.ex
 
 # rtimulib2
 RTIMULib2-*
+rtimulib2-pypilot*
+python*
 rtimulib2/*
 !rtimulib2/debian
